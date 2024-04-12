@@ -12,11 +12,11 @@ const Categories = () => {
         horizontal
         showsHorizontalScrollIndicator={false}
     >
-      <CategoryCard />
-      <CategoryCard />
-      <CategoryCard />
-      <CategoryCard />
-      <CategoryCard />
+      <CategoryCard title='testing' imgUrl='https://links.papareact.com/gn7' />
+      <CategoryCard title='testing' imgUrl='https://links.papareact.com/gn7' />
+      <CategoryCard title='testing' imgUrl='https://links.papareact.com/gn7' />
+      <CategoryCard title='testing' imgUrl='https://links.papareact.com/gn7' />
+      <CategoryCard title='testing' imgUrl='https://links.papareact.com/gn7' />
     </ScrollView>
   )
 }

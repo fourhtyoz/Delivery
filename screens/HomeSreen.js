@@ -8,6 +8,7 @@ import {
     AdjustmentsVerticalIcon
 } from 'react-native-heroicons/outline';
 import Categories from '../components/Categories';
+import FeaturedRow from '../components/FeaturedRow';
 
 
 const HomeSreen = () => {
@@ -20,6 +21,7 @@ const HomeSreen = () => {
     }, [])
 
   return (
+    <>
     <SafeAreaView className='bg-white pt-5'>
         {/* Header */}
         <View className='flex-row pb-3 items-center mx-4 space-x-2'>
@@ -52,11 +54,44 @@ const HomeSreen = () => {
             <AdjustmentsVerticalIcon color='#00CCBB'/>
         </View>
 
-        <ScrollView>
+        {/* Body */}
+        <ScrollView
+            className="bg-gray-100"
+            contentContainerStyle={{
+                paddingBottom: 100,
+            }}
+        >
+            {/* Categories */}
             <Categories />
+
+            {/* Featured Rows */}
+            <FeaturedRow 
+                id={1}
+                title="Featured"
+                description="Paid placements from our partners"
+                // featuredCategory="featured"
+            />
+
+            {/* Tasty Discounts */}
+            <FeaturedRow 
+                id={2}
+                title="Tasty Discounts"
+                description="Everyone's been enjoying these juicy discounts"
+                // featuredCategory="discounts"
+            />
+
+            {/* Offers near you */}
+            <FeaturedRow 
+                id={3}
+                title="Offers near you!"
+                description="Why not support your local restaurant tonight!"
+                // featuredCategory="offers"
+            />
+
         </ScrollView>
-        
     </SafeAreaView>
+   
+    </>
   )
 }
 
