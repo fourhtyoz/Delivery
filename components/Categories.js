@@ -16,6 +16,7 @@ const Categories = () => {
       <CategoryCard />
       <CategoryCard />
       <CategoryCard />
+      <CategoryCard />
     </ScrollView>
   )
 }
