@@ -1,5 +1,5 @@
 import { View, Text, SafeAreaView, Image, TextInput, ScrollView } from 'react-native'
-import React, { useLayoutEffect } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import {
     UserIcon,
@@ -9,15 +9,28 @@ import {
 } from 'react-native-heroicons/outline';
 import Categories from '../components/Categories';
 import FeaturedRow from '../components/FeaturedRow';
+import sanityClient from '../sanity';
 
 
-const HomeSreen = () => {
+const HomeScreen = () => {
     const navigation = useNavigation()
+    const [featuredCategories, setFeaturedCategories] = useState([])
 
     useLayoutEffect(() => {
         navigation.setOptions({
             headerShown: false,
         })
+    }, [])
+
+    useEffect(() => {
+        sanityClient.fetch(`
+        * [_type == 'featured'] {
+        ...,
+        restaurant[]-> {
+          ...,
+          dishes[]->
+        }
+      }`).then(data =>  setFeaturedCategories(data))
     }, [])
 
   return (
@@ -65,28 +78,14 @@ const HomeSreen = () => {
             <Categories />
 
             {/* Featured Rows */}
-            <FeaturedRow 
-                id={1}
-                title="Featured"
-                description="Paid placements from our partners"
-                // featuredCategory="featured"
-            />
-
-            {/* Tasty Discounts */}
-            <FeaturedRow 
-                id={2}
-                title="Tasty Discounts"
-                description="Everyone's been enjoying these juicy discounts"
-                // featuredCategory="discounts"
-            />
-
-            {/* Offers near you */}
-            <FeaturedRow 
-                id={3}
-                title="Offers near you!"
-                description="Why not support your local restaurant tonight!"
-                // featuredCategory="offers"
-            />
+            {featuredCategories.map(item => {
+                return (<FeaturedRow 
+                    key={item._id}
+                    id={item._id}
+                    title={item.name}
+                    description={item.shortDescription}
+                />)
+            })}
 
         </ScrollView>
     </SafeAreaView>
@@ -95,4 +94,4 @@ const HomeSreen = () => {
   )
 }
 
-export default HomeSreen
+export default HomeScreen
