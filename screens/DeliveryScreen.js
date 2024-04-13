@@ -33,7 +33,7 @@ const DeliveryScreen = () => {
             </View>
 
             <Image
-              source={{ uri: "https://links.papareact.com/fls" }}
+              source={require('../assets/delivery.webp')}
               className="h-20 w-20"
             />
           </View>
@@ -70,7 +70,7 @@ const DeliveryScreen = () => {
 
       <View className="bg-white flex-row items-center space-x-5 h-20">
         <Image
-          source={{ uri: "https://links.papareact.com/wru" }}
+          source={require('../assets/placeholder.avif')}
           className="h-12 w-12 bg-gray-300 p-4 rounded-full ml-5"
         />
         <View className="flex-1">
