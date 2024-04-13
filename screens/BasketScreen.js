@@ -1,5 +1,5 @@
 import { View, Text, SafeAreaView, TouchableOpacity, Image, ScrollView } from 'react-native'
-import React, { useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useNavigation } from '@react-navigation/native';
 import { useSelector, useDispatch } from 'react-redux'
 import { selectRestaurant } from '../features/restaurantSlice';
@@ -24,6 +24,15 @@ const BasketScreen = () => {
         setGroupedItems(grouped);
     }, [items]);
 
+
+    useEffect(() => {
+        if (items.length  === 0) {
+            navigation.goBack()
+            return
+        }
+        return
+    }, [groupedItems])
+
     if (!items.length) return null
     return (
         <SafeAreaView className='flex-1 bg-white'>
@@ -47,7 +56,7 @@ const BasketScreen = () => {
                         className='h-7 w-7 bg-gray-300 p-4 rounded-full'
                         source={require('../assets/placeholder.avif')}
                     />
-                    <Text className='flex-1'>Deliver in 50-75 min</Text>
+                    <Text className='flex-1'>Delivery in 50-75 min.</Text>
                     <TouchableOpacity>
                         <Text className='text-[#00CCBB]'>Change</Text>
                     </TouchableOpacity>
@@ -64,12 +73,12 @@ const BasketScreen = () => {
                             <Text className='flex-1'>{i[0]?.name}</Text>
 
                             <Text className='text-gray-600'>
-                                ${i[0].price}.00
+                                ${i.length * i[0].price}.00
                             </Text>
 
                             <TouchableOpacity>
                                 <Text 
-                                    className='text-[#00CCBB] text-xs'
+                                    className='text-[#00CCBB]'
                                     onPress={() => dispatch(removeFromBasket({ id: key }))}
                                 >
                                     Remove

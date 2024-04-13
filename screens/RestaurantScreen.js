@@ -11,8 +11,9 @@ import {
 } from 'react-native-heroicons/solid'
 import DishRow from '../components/DishRow';
 import BasketIcon from '../components/BasketIcon';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setRestaurant } from '../features/restaurantSlice';
+import { selectBasketItems } from '../features/basketSlice';
 
 const RestaurantScreen = () => {
     const { 
@@ -52,10 +53,12 @@ const RestaurantScreen = () => {
             lat
         }))
     }, [])
+    
+    const basketItems = useSelector(selectBasketItems)
 
     return (
         <>
-        <BasketIcon />
+        {basketItems.length > 0 && <BasketIcon />}
         <ScrollView>
             <View className="relative">
                 <Image 
@@ -98,9 +101,12 @@ const RestaurantScreen = () => {
 
                 <TouchableOpacity className='flex-row items-center space-x-2 p-4 border-y border-gray-200'>
                     <QuestionMarkCircleIcon color='gray' opacity={0.5} size={20}/>
-                    <Text className='pl-2 flex-1 text-md font-bold'>
-                        Have a food allergy?
-                    </Text>
+                    {/* TODO */}
+                    <TouchableOpacity>
+                        <Text className='pl-2 flex-1 text-md font-bold'>
+                            Have a food allergy?
+                        </Text>
+                    </TouchableOpacity>
                     <ChevronRightIcon color='#00CCBB'/>
                 </TouchableOpacity>
             </View>

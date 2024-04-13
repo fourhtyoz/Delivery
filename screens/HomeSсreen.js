@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, Image, TextInput, ScrollView } from 'react-native'
+import { View, Text, SafeAreaView, Image, TextInput, ScrollView, TouchableOpacity } from 'react-native'
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import {
@@ -44,13 +44,17 @@ const HomeScreen = () => {
             />
             <View className='flex-1'>
                 <Text className='font-bold text-gray-400 text-xs'>Deliver Now!</Text>
+                {/* TODO */}
                 <Text className='font-bold text-xl' >
                     Current Location
                     <ChevronDownIcon size={20} color='#00CCBB'/>
                 </Text>
 
             </View>
-            <UserIcon size={35} color='#00CCBB' />
+            {/* TODO */}
+            <TouchableOpacity>
+                <UserIcon size={35} color='#00CCBB' />
+            </TouchableOpacity>
         </View>
 
         {/* Search */}
@@ -62,7 +66,9 @@ const HomeScreen = () => {
                     keyboardType='default'
                 />
             </View>
-            <AdjustmentsVerticalIcon color='#00CCBB'/>
+            <TouchableOpacity>
+                <AdjustmentsVerticalIcon color='#00CCBB'/>
+            </TouchableOpacity>
         </View>
 
         {/* Body */}
