@@ -93,7 +93,7 @@ const BasketScreen = () => {
 
                     <View className='flex-row justify-between'>
                         <Text className='text-gray-400'>
-                            Deilvery Fee
+                            Delivery Fee
                         </Text>
                         <Text className='text-gray-400'>
                             $5.99
@@ -107,7 +107,7 @@ const BasketScreen = () => {
                         </Text>
                     </View>
 
-                    <TouchableOpacity className='rounded-lg bg-[#00CCBB] p-4'>
+                    <TouchableOpacity onPress={() => navigation.navigate('Preparing')} className='rounded-lg bg-[#00CCBB] p-4'>
                         <Text className='text-center text-white text-lg font-bold'>
                             Place Order
                         </Text>
