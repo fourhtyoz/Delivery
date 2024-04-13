@@ -39,7 +39,7 @@ const DishRow = ({
                 <Text className='text-lg mb-1'>{name}</Text>
                 <Text className='text-gray-400'>{description}</Text>
                 <Text className='text-gray-400 mt-2'>
-                    {price} USD
+                    ${price}.00
                 </Text>
             </View>
        
