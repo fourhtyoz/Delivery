@@ -24,48 +24,40 @@ const FeaturedRow = ({ id, title, description }) => {
       })
     }, [id])
 
-    if (restaurants.length > 1) {
-        return (
-            <View>
-                <View className="mt-4 flex-row items-center justify-between px-4">
-                    <Text className="font-bold text-lg">{title}</Text>
-                    <ArrowRightIcon color="#00CCBB" />
-                </View>
-                <Text className="font-xs text-gray-500 px-4">{description}</Text>
-        
-                <ScrollView
-                    horizontal
-                    contentContainerStyle={{
-                        paddingHorizontal: 15,
-                    }}
-                    showsHorizontalScrollIndicator={false}
-                    className="pt-4"
-                >
-                    {restaurants.map(item => {
-                       return (<RestaurantCard 
-                            key={item._id}
-                            id={item._id} 
-                            imgUrl={item.image}
-                            title={item.name}
-                            rating={item.rating}
-                            genre={item.type?.name}
-                            address={item.address}
-                            shortDescription={item.shortDescription}
-                            dishes={item.dishes}
-                            long={item.long}
-                            lat={item.lat}
-                        />)
-                    })}
-                </ScrollView>
+    return (
+        <View>
+            <View className="mt-4 flex-row items-center justify-between px-4">
+                <Text className="font-bold text-lg">{title}</Text>
+                <ArrowRightIcon color="#00CCBB" />
             </View>
-          )
-    }
-    else {
-        return (
-            <Text>hi</Text>
-        )
-    }
-  
+            <Text className="font-xs text-gray-500 px-4">{description}</Text>
+    
+            <ScrollView
+                horizontal
+                contentContainerStyle={{
+                    paddingHorizontal: 15,
+                }}
+                showsHorizontalScrollIndicator={false}
+                className="pt-4"
+            >
+                {restaurants.map(item => {
+                    return (<RestaurantCard 
+                        key={item._id}
+                        id={item._id} 
+                        imgUrl={item.image}
+                        title={item.name}
+                        rating={item.rating}
+                        genre={item.type?.name}
+                        address={item.address}
+                        shortDescription={item.shortDescription}
+                        dishes={item.dishes}
+                        long={item.long}
+                        lat={item.lat}
+                    />)
+                })}
+            </ScrollView>
+        </View>
+    )
 }
 
 export default FeaturedRow

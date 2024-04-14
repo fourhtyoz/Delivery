@@ -1,9 +1,11 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import React from "react";
+import { useNavigation } from '@react-navigation/native';
 
 const CategoryCard = ({ imgUrl, title }) => {
+  const navigation = useNavigation();
   return (
-    <TouchableOpacity className="relative mr-2">
+    <TouchableOpacity  onPress={() => navigation.navigate('Restaurants', { title })} className="relative mr-2">
       <Image
         className="w-20 h-20 rounded"
         source={{

@@ -52,7 +52,7 @@ const HomeScreen = () => {
 
             </View>
             {/* TODO */}
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Profile')} >
                 <UserIcon size={35} color='#00CCBB' />
             </TouchableOpacity>
         </View>

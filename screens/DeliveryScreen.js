@@ -7,10 +7,9 @@ import { selectRestaurant } from "../features/restaurantSlice";
 import { XCircleIcon, XMarkIcon } from "react-native-heroicons/outline";
 import * as Progress from "react-native-progress";
 import MapView, { Marker } from "react-native-maps";
-import { SafeAreaView as SafeViewNormal } from "react-native";
 
 const DeliveryScreen = () => {
-  const navigation = useNavigation();
+const navigation = useNavigation();
   const restaurant = useSelector(selectRestaurant);
 
   return (

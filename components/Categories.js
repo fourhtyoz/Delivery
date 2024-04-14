@@ -25,7 +25,6 @@ const Categories = () => {
             <CategoryCard 
                 key={item._id}
                 title={item.name}
-                // description={item.shortDescription}
                 imgUrl={urlFor(item.image).width(200).url()}
             />
         ))}

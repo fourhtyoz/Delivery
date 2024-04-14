@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, ScrollView, Image, TouchableOpacity } from 'react-native'
+import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native'
 import React, { useEffect, useLayoutEffect } from 'react'
 import { useRoute, useNavigation } from '@react-navigation/native';
 import { urlFor } from '../sanity';
@@ -99,14 +99,12 @@ const RestaurantScreen = () => {
                     <Text className='text-gray-500 mt-2 pb-4'>{shortDescription}</Text>
                 </View>
 
-                <TouchableOpacity className='flex-row items-center space-x-2 p-4 border-y border-gray-200'>
+                <TouchableOpacity onPress={() => navigation.navigate('Allergy')} className='flex-row items-center space-x-2 p-4 border-y border-gray-200'>
                     <QuestionMarkCircleIcon color='gray' opacity={0.5} size={20}/>
                     {/* TODO */}
-                    <TouchableOpacity>
-                        <Text className='pl-2 flex-1 text-md font-bold'>
-                            Have a food allergy?
-                        </Text>
-                    </TouchableOpacity>
+                    <Text className='pl-2 flex-1 text-md font-bold'>
+                        Have a food allergy?
+                    </Text>
                     <ChevronRightIcon color='#00CCBB'/>
                 </TouchableOpacity>
             </View>

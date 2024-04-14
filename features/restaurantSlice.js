@@ -26,5 +26,8 @@ export const restaurantSlice = createSlice({
 })
 
 export const { setRestaurant } = restaurantSlice.actions
-export const selectRestaurant = state => state.restaurant.restaurant
+export const selectRestaurant = state => {
+    console.log(4)
+    return state.restaurant.restaurant
+}
 export default restaurantSlice.reducer
