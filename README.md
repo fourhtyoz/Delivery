@@ -2,15 +2,18 @@
 
 Delivery is a food delivery app created with React Native (Expo), Tailwindcss, Redux
 
+![screenshot](./docs/images/main.png)
+
 ## Installation
 
 Use the package manager [npm](https://www.npmjs.com/) to install dependencies:
-``npm i```
+```npm i```
 
 ## Usage
 
 Once the dependencies installed you can launch the project:
 ```npm run start```
+
 
 ## Contributing
 
