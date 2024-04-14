@@ -4,23 +4,23 @@ Delivery is a food delivery app created with React Native (Expo), Tailwindcss, R
 
 **Home**
 
-<img src="./docs/images/main.png" width="200">
+<img src="./docs/images/main.png" width="300">
 
 **Restaurant**
 
-<img src="./docs/images/restaurant.png" width="200">
+<img src="./docs/images/restaurant.png" width="300">
 
 **Basket**
 
-<img src="./docs/images/basket.png" width="200">
+<img src="./docs/images/basket.png" width="300">
 
 **Preparing order**
 
-<img src="./docs/images/preparing.png" width="200">
+<img src="./docs/images/preparing.png" width="300">
 
 **Waiting for deliver**
 
-<img src="./docs/images/waiting.png" width="200">
+<img src="./docs/images/waiting.png" width="300">
 
 
 
